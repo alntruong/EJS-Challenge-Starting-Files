@@ -20,21 +20,17 @@ app.get("/", (req, res) => {
   res.render("home", {startingContent: homeStartingContent})
 });
 
-app.get("/contact", (req, res) => {
-  res.render("contact", {contact: contactContent})
+app.get("/about", (req, res) => {
+  res.render("about", {about: aboutContent});
 });
 
-app.get("/about", (req, res) => {
-  res.render("about", {about: aboutContent})
-})
+app.get("/contact", (req, res) => {
+  res.render("contact", {contact: contactContent});
+});
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 });
-
-
-
-
 
 
 
