@@ -28,6 +28,14 @@ app.get("/contact", (req, res) => {
   res.render("contact", {contact: contactContent});
 });
 
+app.get("/compose", (req, res) => {
+  res.render("compose")
+});
+
+app.post("/compose", (req, res) => {
+  console.log(req.body.postTitle)
+});
+
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 });
