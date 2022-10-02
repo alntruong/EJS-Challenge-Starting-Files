@@ -51,7 +51,7 @@ app.get("/posts/:postName", (req, res) => {
   const requestedTitle = req.params.postName;
 
   posts.forEach(post => {
-    const storedTitle = post.title;
+    const storedTitle = _.kebabCase(post.title);
 
     if (requestedTitle === storedTitle) {
       console.log("Match");
@@ -60,7 +60,6 @@ app.get("/posts/:postName", (req, res) => {
     };
     });
 
-  
 });
 
 app.listen(port, () => {
